@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: rgb(202, 202, 202);
+    font-family: 'Poppins', sans-serif;
+}
+
+body::before{
+    content: '';
+    width: 150vw;
+    height: 150vw;
+    background: #09f;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -95%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+#container{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 40vw;
+    height: 70vh;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: -35px 70px 70px rgba(0, 0, 0, 0.164);
+}
+#header-main{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: rgb(43, 43, 43);
+}
+
+#header-main > h1{
+    font-size: 1.35rem;
+    color: rgb(255, 255, 255);
+}
+
+#btn-cadastro{
+    background: #09f;
+    padding: 10px 40px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    transition: background .5s; 
+    text-transform: uppercase;
+    outline: none;
+}
+
+#btn-cadastro:hover{
+    background: rgb(0, 92, 153);
+    cursor: pointer;
+}
+
+#conteudo{
+    width: 100%;
+    height: 90%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: rgba(255, 255,255,.7);
+    padding: 15px;
+}
+
+.contact-box{
+    width: 100%;
+    height: 15vh;
+    margin-bottom: 10px; 
+    background: white;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    transition: transform .5s;
+}
+
+.contact-box.hide{
+    transform: translateX(-150%)
+}
+
+.img-icon{
+    height: calc(100% - 10px);
+    width: calc(15vh - 5px);
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(70, 70, 70);
+    border-radius: 4px;
+}
+
+.img-icon > i{
+    font-size: 2rem;
+    color: #fff;
+}
+
+.contact{
+    width: calc(100% - 15vh);
+    padding: 0 5px;
+}
+
+.title-user{
+    padding: 0px 10px;
+    background: rgb(206, 206, 206);
+    color: rgb(29, 29, 29);
+    font-weight: 500;
+    position: relative;
+}
+
+.form-control{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    pointer-events: all;
+    background: white;
+    z-index: 3;
+    transition: all .5s;
+    width: 25vw;
+    height: 25vh;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    padding-top: calc(25vh - 10%);
+}
+
+.form-control #header-form{
+    width: 100%;
+    height: 20%;
+    padding: 0 10px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background: #09f;
+    color: white;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.form-control span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    background: rgb(0, 0, 0);
+    color: white;
+    transition: background .5s;
+    z-index: 4;
+}
+.form-control span:hover{
+    cursor: pointer;
+    background: rgb(37, 37, 37);
+}
+
+.form-control.hide{
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.form-control .input-group{ 
+    width: 80%;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-control .input-group label{
+    width: 30%;
+}
+
+.form-control .input-group input{
+    width: 70%;
+    border: none;
+    border-bottom: 1px solid #333;
+    outline: none;
+}
+
+#enviar{
+    background: #333;
+    color: white;
+    padding: 5px 15px;
+    transition: background .5s;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+}
+#enviar:hover{
+    background: #555;
+    cursor: pointer;
+}
+
+#back-overlay.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+
+#back-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background: rgba(0,0,0,0.8);
+    transition: opacity .5s;
+    backdrop-filter: blur(5px);
+}
